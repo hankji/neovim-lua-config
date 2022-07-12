@@ -17,7 +17,7 @@ autocmd("FileType", {
 })
 
 -- wrap the PackerSync command to warn people before using it in NvChadSnapshots
-autocmd("VimEnter", {
+autocmd("CmdlineEnter", {
    callback = function()
       vim.cmd "command! -nargs=* -complete=customlist,v:lua.require'packer'.plugin_complete PackerSync lua require('core.utils').packer_sync(<f-args>)"
    end,
