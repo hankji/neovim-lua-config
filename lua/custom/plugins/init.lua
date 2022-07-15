@@ -5,4 +5,7 @@ return {
    ["dstein64/vim-startuptime"] = { cmd = "StartupTime" },
    -- ["morhetz/gruvbox"] = {},
    ["sainnhe/gruvbox-material"] = {},
+   ["goolord/alpha-nvim"] = {
+     disable = false,
+   },
 }
