@@ -13,4 +13,6 @@ return {
        require('custom.plugins.gitsigns').setup()
      end
    },
+   ['airblade/vim-gitgutter'] = {},
+   ['tpope/vim-fugitive'] = {},
 }
