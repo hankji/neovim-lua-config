@@ -14,21 +14,35 @@ M.plugins = {
 	 ["nvim-treesitter/nvim-treesitter"] = {
         ensure_installed = { "c", "lua", "rust", "go", "python" },
      },
-   },
+     ["williamboman/mason.nvim"] = {
+      ensure_installed = {
+        -- lua stuff
+        "lua-language-server",
+        "stylua",
+
+        -- go dev
+        "gopls",
+        "gofumpt",
+
+        -- shell
+        "shfmt",
+        "shellcheck",
+        },
+     },
+     -- ["neovim/nvim-lspconfig"] = {
+     --    config = function()
+     --       require "plugins.configs.lspconfig"
+     --       require "custom.plugins.lspconfig"
+     --    end,
+     -- },
+ },
    remove = {},
    user = require("custom.plugins"),
-   options = {
-      lspconfig = {
-         setup_lspconf = "custom.plugins.lspconfig", -- path of lspconfig file
-      },
-   },
+   options = {},
 }
 
 M.options = {
    -- load your options here or load module with options
-   user = function() 
-	   require("custom.options")
-   end,
 }
 
 M.mappings = require "custom.mappings"

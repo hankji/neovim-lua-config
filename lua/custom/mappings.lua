@@ -7,5 +7,10 @@ M.telescope = {
         ["<F2>"] = { "<cmd> Telescope lsp_document_symbols <CR>", "   list document symbols" },
     },
 }
+M.lspconfig = {
+    n = {
+        ["<leader>fm"] = { function() vim.lsp.buf.format() end, "   lsp formatting", },
+    },
+}
 
 return M
