@@ -15,7 +15,7 @@ local b = null_ls.builtins
 local sources = {
    -- formatting
    b.formatting.prettierd,
-   b.formatting.shfmt,
+   b.formatting.shfmt.with { extra_args = { "-i", "4" } },
    b.formatting.fixjson,
    b.formatting.black.with { extra_args = { "--fast" } },
    b.formatting.isort,
