@@ -2,7 +2,7 @@ return {
     ["jose-elias-alvarez/null-ls.nvim"] = {
         after = "nvim-lspconfig",
         config = function()
-           require "custom.plugins.null-ls"
+            require("custom.plugins.null-ls")
         end,
     },
     ["dstein64/vim-startuptime"] = { cmd = "StartupTime" },
@@ -11,15 +11,16 @@ return {
     ["goolord/alpha-nvim"] = {
         disable = false,
     },
-    ['lewis6991/gitsigns.nvim'] = {
+    ["lewis6991/gitsigns.nvim"] = {
         config = function()
-            require('custom.plugins.gitsigns').setup()
-        end
+            require("custom.plugins.gitsigns").setup()
+        end,
     },
     ["ray-x/go.nvim"] = {
         config = function()
-            require('go').setup()
-        end
+            require("go").setup()
+        end,
     },
     ["ray-x/guihua.lua"] = {},
+    -- ["folke/which-key.nvim"] = { disable = false },
 }

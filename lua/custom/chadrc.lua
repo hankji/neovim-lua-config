@@ -6,45 +6,39 @@ local M = {}
 -- example of changing theme:
 
 M.ui = {
-   theme = "gruvbox",
+    theme = "gruvbox",
 }
 
 M.plugins = {
-   override = {
-	 ["nvim-treesitter/nvim-treesitter"] = {
-        ensure_installed = { "c", "lua", "rust", "go", "python" },
-     },
-     ["williamboman/mason.nvim"] = {
-      ensure_installed = {
-        -- lua stuff
-        "lua-language-server",
-        "stylua",
-
-        -- go dev
-        "gopls",
-        "gofumpt",
-
-        -- shell
-        "shfmt",
-        "shellcheck",
+    override = {
+        ["nvim-treesitter/nvim-treesitter"] = {
+            ensure_installed = { "c", "lua", "rust", "go", "python" },
         },
-     },
-     -- ["neovim/nvim-lspconfig"] = {
-     --    config = function()
-     --       require "plugins.configs.lspconfig"
-     --       require "custom.plugins.lspconfig"
-     --    end,
-     -- },
- },
-   remove = {},
-   user = require("custom.plugins"),
-   options = {},
+        ["williamboman/mason.nvim"] = {
+            ensure_installed = {
+                -- lua stuff
+                "lua-language-server",
+                "stylua",
+
+                -- go dev
+                "gopls",
+                "gofumpt",
+
+                -- shell
+                "shfmt",
+                "shellcheck",
+            },
+        },
+    },
+    remove = {},
+    user = require("custom.plugins"),
+    options = {},
 }
 
 M.options = {
-   -- load your options here or load module with options
+    -- load your options here or load module with options
 }
 
-M.mappings = require "custom.mappings"
+M.mappings = require("custom.mappings")
 
 return M
