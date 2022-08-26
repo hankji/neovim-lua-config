@@ -22,5 +22,11 @@ return {
         end,
     },
     ["ray-x/guihua.lua"] = {},
-    -- ["folke/which-key.nvim"] = { disable = false },
+    ["folke/which-key.nvim"] = { disable = false },
+    ["ThePrimeagen/refactoring.nvim"] = {
+        require = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-treesitter/nvim-treesitter" },
+        },
+    },
 }

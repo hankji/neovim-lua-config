@@ -9,7 +9,18 @@ M.telescope = {
 }
 M.lspconfig = {
     n = {
-        ["<leader>fm"] = { function() vim.lsp.buf.format() end, "   lsp formatting", },
+        ["<leader>fm"] = {
+            function()
+                vim.lsp.buf.format()
+            end,
+            "   lsp formatting",
+        },
+        ["<leader>of"] = {
+            function()
+                vim.diagnostic.open_float()
+            end,
+            "floating diagnostic",
+        },
     },
 }
 
