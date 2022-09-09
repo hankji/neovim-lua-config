@@ -1,4 +1,22 @@
 return {
+    ["nvim-treesitter/nvim-treesitter"] = {
+        ensure_installed = { "c", "lua", "rust", "go", "python" },
+    },
+    ["williamboman/mason.nvim"] = {
+        ensure_installed = {
+            -- lua stuff
+            "lua-language-server",
+            "stylua",
+
+            -- go dev
+            "gopls",
+            "gofumpt",
+
+            -- shell
+            "shfmt",
+            "shellcheck",
+        },
+    },
     ["jose-elias-alvarez/null-ls.nvim"] = {
         after = "nvim-lspconfig",
         config = function()

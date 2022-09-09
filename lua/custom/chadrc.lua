@@ -9,35 +9,9 @@ M.ui = {
     theme = "gruvbox",
 }
 
-M.plugins = {
-    override = {
-        ["nvim-treesitter/nvim-treesitter"] = {
-            ensure_installed = { "c", "lua", "rust", "go", "python" },
-        },
-        ["williamboman/mason.nvim"] = {
-            ensure_installed = {
-                -- lua stuff
-                "lua-language-server",
-                "stylua",
+M.plugins = require("custom.plugins")
 
-                -- go dev
-                "gopls",
-                "gofumpt",
-
-                -- shell
-                "shfmt",
-                "shellcheck",
-            },
-        },
-    },
-    remove = {},
-    user = require("custom.plugins"),
-    options = {},
-}
-
-M.options = {
-    -- load your options here or load module with options
-}
+M.options = {}
 
 M.mappings = require("custom.mappings")
 
