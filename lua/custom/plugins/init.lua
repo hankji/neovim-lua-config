@@ -4,6 +4,13 @@ return {
             ensure_installed = { "c", "lua", "rust", "go", "python" },
         },
     },
+    ["nvim-treesitter/nvim-treesitter-context"] = {
+        -- after = "nvim-treesitter/nvim-treesitter",
+        requires = "nvim-treesitter/nvim-treesitter",
+        config = function()
+            require("custom.plugins.treesitter-context")
+        end,
+    },
     ["williamboman/mason.nvim"] = {
         override_options = {
             ensure_installed = {
