@@ -1,20 +1,24 @@
 return {
     ["nvim-treesitter/nvim-treesitter"] = {
-        ensure_installed = { "c", "lua", "rust", "go", "python" },
+        override_options = {
+            ensure_installed = { "c", "lua", "rust", "go", "python" },
+        },
     },
     ["williamboman/mason.nvim"] = {
-        ensure_installed = {
-            -- lua stuff
-            "lua-language-server",
-            "stylua",
+        override_options = {
+            ensure_installed = {
+                -- lua stuff
+                "lua-language-server",
+                "stylua",
 
-            -- go dev
-            "gopls",
-            "gofumpt",
+                -- go dev
+                "gopls",
+                "gofumpt",
 
-            -- shell
-            "shfmt",
-            "shellcheck",
+                -- shell
+                "shfmt",
+                "shellcheck",
+            },
         },
     },
     ["jose-elias-alvarez/null-ls.nvim"] = {
