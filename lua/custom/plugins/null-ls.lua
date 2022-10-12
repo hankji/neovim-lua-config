@@ -56,7 +56,8 @@ null_ls.setup({
                 buffer = bufnr,
                 callback = function()
                     -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-                    if vim.g.vim_version < 8 then
+                    -- if vim.g.vim_version < 8 then
+                    if vim.version().minor < 8 then
                         vim.lsp.buf.formatting_sync()
                     else
                         vim.lsp.buf.format({ bufnr = bufnr })
