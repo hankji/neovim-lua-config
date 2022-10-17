@@ -58,4 +58,17 @@ return {
             { "nvim-treesitter/nvim-treesitter" },
         },
     },
+    -- support for up and down arrow keys in cmp
+    ["hrsh7th/nvim-cmp"] = {
+        override_options = function()
+            local cmp = require("cmp")
+
+            return {
+                mapping = {
+                    ["<Up>"] = cmp.mapping.select_prev_item(),
+                    ["<Down>"] = cmp.mapping.select_next_item(),
+                },
+            }
+        end,
+    },
 }

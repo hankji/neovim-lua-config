@@ -10,3 +10,5 @@ opt.shiftwidth = 4
 vim.cmd("silent! command! NvCloseAllBuf lua require('nvchad_ui/tabufline').closeAllBufs('')")
 
 g.mapleader = ","
+-- need soft link from ~/config/nvim/snippets to snippets
+g.luasnippets_path = "./snippets"
