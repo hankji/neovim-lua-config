@@ -12,3 +12,8 @@ vim.cmd("silent! command! NvCloseAllBuf lua require('nvchad_ui/tabufline').close
 g.mapleader = ","
 -- need soft link from ~/config/nvim/snippets to snippets
 g.luasnippets_path = "./snippets"
+
+-- for fold
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldlevel = 99
