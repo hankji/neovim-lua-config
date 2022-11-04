@@ -71,4 +71,11 @@ return {
             }
         end,
     },
+    ["anuvyklack/pretty-fold.nvim"] = {
+        config = function()
+            require("pretty-fold").setup({
+                remove_fold_markers = false,
+            })
+        end,
+    },
 }
