@@ -36,7 +36,8 @@ return {
     },
     ["dstein64/vim-startuptime"] = { cmd = "StartupTime" },
     -- ["morhetz/gruvbox"] = {},
-    ["sainnhe/gruvbox-material"] = {},
+    -- ["sainnhe/gruvbox-material"] = {},
+    -- ["luisiacc/gruvbox-baby"] = {},
     ["goolord/alpha-nvim"] = {
         disable = false,
     },
