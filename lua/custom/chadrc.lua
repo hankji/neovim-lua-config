@@ -6,7 +6,7 @@ local M = {}
 -- example of changing theme:
 
 M.ui = {
-    theme = "gruvbox",
+    theme = "gruvbox_material",
 }
 
 M.plugins = require("custom.plugins")
