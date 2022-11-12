@@ -2,6 +2,15 @@ return {
     ["nvim-treesitter/nvim-treesitter"] = {
         override_options = {
             ensure_installed = { "c", "lua", "rust", "go", "python" },
+            incremental_selection = {
+                enable = true,
+                keymaps = {
+                    init_selection = "gnn",
+                    node_incremental = "grn",
+                    scope_incremental = "grc",
+                    node_decremental = "grm",
+                },
+            },
         },
     },
     ["nvim-treesitter/nvim-treesitter-context"] = {
@@ -9,6 +18,13 @@ return {
         requires = "nvim-treesitter/nvim-treesitter",
         config = function()
             require("custom.plugins.treesitter-context")
+        end,
+    },
+    ["nvim-treesitter/nvim-treesitter-textobjects"] = {
+        -- after = "nvim-treesitter/nvim-treesitter",
+        requires = "nvim-treesitter/nvim-treesitter",
+        config = function()
+            require("custom.plugins.treesitter-textobjects")
         end,
     },
     ["williamboman/mason.nvim"] = {
