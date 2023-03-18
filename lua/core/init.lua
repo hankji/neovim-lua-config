@@ -71,18 +71,12 @@ autocmd("FileType", {
   end,
 })
 
+-- reload some chadrc options on-save
 local sep = vim.loop.os_uname().sysname:find "windows" and "\\" or "/"
 
--- reload some chadrc options on-save
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = vim.fn.glob(
-    table.concat({
-      vim.fn.stdpath "config",
-      "lua",
-      "custom",
-      "**",
-      "*.lua",
-    }, sep),
+    vim.fs.normalize(vim.fn.stdpath("config") .. "/lua/custom/**/*.lua"),
     true,
     true,
     true
