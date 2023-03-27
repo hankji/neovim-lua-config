@@ -15,7 +15,7 @@
 
 <div align="center">
  
-[![Neovim Minimum Version](https://img.shields.io/badge/Neovim-0.8.0-blueviolet.svg?style=flat-square&logo=Neovim&color=90E59A&logoColor=white)](https://github.com/neovim/neovim)
+[![Neovim Minimum Version](https://img.shields.io/badge/Neovim-0.8.3-blueviolet.svg?style=flat-square&logo=Neovim&color=90E59A&logoColor=white)](https://github.com/neovim/neovim)
 [![GitHub Issues](https://img.shields.io/github/issues/NvChad/NvChad.svg?style=flat-square&label=Issues&color=d77982)](https://github.com/NvChad/NvChad/issues)
 [![Discord](https://img.shields.io/discord/869557815780470834?color=738adb&label=Discord&logo=discord&logoColor=white&style=flat-square)](https://discord.gg/gADmkJb9Fb)
 [![Matrix](https://img.shields.io/badge/Matrix-40aa8b.svg?style=flat-square&logo=Matrix&logoColor=white)](https://matrix.to/#/#nvchad:matrix.org)
@@ -49,7 +49,7 @@
 ![radium 3](https://nvchad.com/screenshots/radium3.webp)
 
 
-(Note: these are just 4-5 themes, NvChad has around 27+ themes)
+(Note: these are just 4-5 themes, NvChad has around 56 themes)
 </details>
 
 ## UI related plugins used
@@ -86,7 +86,7 @@ A fuzzy file finder, picker, sorter, previewer and much more:
 
 ## Plugins list
 
-- Many beautiful themes, theme toggler by [our base46 plugin](https://github.com/NvChad/base46)
+- Many beautiful themes, theme toggler by our [base46 plugin](https://github.com/NvChad/base46)
 - Inbuilt terminal toggling & management with [Nvterm](https://github.com/NvChad/nvterm)
 - NvChad updater, hide & unhide terminal buffers with [NvChad extensions](https://github.com/NvChad/extensions)
 - Lightweight & performant ui plugin with [NvChad UI](https://github.com/NvChad/ui)
