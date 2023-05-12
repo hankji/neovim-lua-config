@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -48,18 +48,18 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter-context",
     init = require("core.utils").lazy_load "nvim-treesitter-context",
     dependencies = "nvim-treesitter/nvim-treesitter",
-        config = function()
-            require "custom.configs.treesitter-context"
-        end,
+    config = function()
+      require "custom.configs.treesitter-context"
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
     init = require("core.utils").lazy_load "nvim-treesitter-textobjects",
-        -- after = "nvim-treesitter/nvim-treesitter",
-     dependencies = "nvim-treesitter/nvim-treesitter",
-     config = function()
-            require "custom.configs.treesitter-textobjects"
-        end,
+    -- after = "nvim-treesitter/nvim-treesitter",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require "custom.configs.treesitter-textobjects"
+    end,
   },
 
   {
@@ -69,39 +69,47 @@ local plugins = {
   {
     "ggandor/leap.nvim",
     init = require("core.utils").lazy_load "leap.nvim",
-        config = function()
-            require("leap").add_default_mappings()
-            vim.keymap.del({ "x", "o" }, "x")
-            vim.keymap.del({ "x", "o" }, "X")
-        end,
+    config = function()
+      require("leap").add_default_mappings()
+      vim.keymap.del({ "x", "o" }, "x")
+      vim.keymap.del({ "x", "o" }, "X")
+    end,
   },
   {
     "anuvyklack/pretty-fold.nvim",
     init = require("core.utils").lazy_load "pretty-fold.nvim",
-        config = function()
-            require("pretty-fold").setup({
-                remove_fold_markers = false,
-            })
-        end,
+    config = function()
+      require("pretty-fold").setup {
+        remove_fold_markers = false,
+      }
+    end,
   },
   {
     "ThePrimeagen/refactoring.nvim",
     init = require("core.utils").lazy_load "refactoring.nvim",
     dependencies = {
-            { "nvim-lua/plenary.nvim" },
-            { "nvim-treesitter/nvim-treesitter" },
-        },
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
   },
   {
     "Exafunction/codeium.vim",
     init = require("core.utils").lazy_load "codeium.vim",
-    config = function ()
+    config = function()
       -- Change '<C-g>' here to any keycode you like.
-      vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true })
-      vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
-      vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
-      vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
-    end
+      vim.keymap.set("i", "<C-g>", function()
+        return vim.fn["codeium#Accept"]()
+      end, { expr = true })
+      vim.keymap.set("i", "<c-;>", function()
+        return vim.fn["codeium#CycleCompletions"](1)
+      end, { expr = true })
+      vim.keymap.set("i", "<c-,>", function()
+        return vim.fn["codeium#CycleCompletions"](-1)
+      end, { expr = true })
+      vim.keymap.set("i", "<c-x>", function()
+        return vim.fn["codeium#Clear"]()
+      end, { expr = true })
+    end,
   },
 
   -- To make a plugin not be loaded
@@ -114,6 +122,14 @@ local plugins = {
   {
     "folke/which-key.nvim",
     enabled = true,
+  },
+
+  {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    init = require("core.utils").lazy_load "lsp_lines.nvim",
+    config = function()
+      require("lsp_lines").setup()
+    end,
   },
 }
 
