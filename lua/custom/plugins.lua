@@ -34,7 +34,7 @@ local plugins = {
   },
 
   {
-    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
     opts = overrides.mason,
   },
 
