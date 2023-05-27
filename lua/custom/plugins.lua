@@ -131,6 +131,17 @@ local plugins = {
       require("lsp_lines").setup()
     end,
   },
+  {
+    "shellRaining/hlchunk.nvim",
+    event = { "UIEnter" },
+    config = function()
+      require("hlchunk").setup {}
+    end,
+  },
+  {
+    "kevinhwang91/nvim-bqf",
+    lazy = false,
+  },
 }
 
 return plugins
