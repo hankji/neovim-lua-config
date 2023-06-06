@@ -92,25 +92,25 @@ local plugins = {
       { "nvim-treesitter/nvim-treesitter" },
     },
   },
-  {
-    "Exafunction/codeium.vim",
-    init = require("core.utils").lazy_load "codeium.vim",
-    config = function()
-      -- Change '<C-g>' here to any keycode you like.
-      vim.keymap.set("i", "<C-g>", function()
-        return vim.fn["codeium#Accept"]()
-      end, { expr = true })
-      vim.keymap.set("i", "<c-;>", function()
-        return vim.fn["codeium#CycleCompletions"](1)
-      end, { expr = true })
-      vim.keymap.set("i", "<c-,>", function()
-        return vim.fn["codeium#CycleCompletions"](-1)
-      end, { expr = true })
-      vim.keymap.set("i", "<c-x>", function()
-        return vim.fn["codeium#Clear"]()
-      end, { expr = true })
-    end,
-  },
+  -- {
+  --   "Exafunction/codeium.vim",
+  --   init = require("core.utils").lazy_load "codeium.vim",
+  --   config = function()
+  --     -- Change '<C-g>' here to any keycode you like.
+  --     vim.keymap.set("i", "<C-g>", function()
+  --       return vim.fn["codeium#Accept"]()
+  --     end, { expr = true })
+  --     vim.keymap.set("i", "<c-;>", function()
+  --       return vim.fn["codeium#CycleCompletions"](1)
+  --     end, { expr = true })
+  --     vim.keymap.set("i", "<c-,>", function()
+  --       return vim.fn["codeium#CycleCompletions"](-1)
+  --     end, { expr = true })
+  --     vim.keymap.set("i", "<c-x>", function()
+  --       return vim.fn["codeium#Clear"]()
+  --     end, { expr = true })
+  --   end,
+  -- },
 
   -- To make a plugin not be loaded
   -- {
@@ -141,6 +141,28 @@ local plugins = {
   {
     "kevinhwang91/nvim-bqf",
     lazy = false,
+  },
+  { "mfussenegger/nvim-dap" },
+  {
+    "leoluz/nvim-dap-go",
+    -- can be load with: Lazy load nvim-dap-go
+    -- lazy = false,
+    dependencies = {
+      "mfussenegger/nvim-dap",
+    },
+    config = function()
+      require "custom/configs/dlvdap"
+    end,
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+    },
+    -- lazy = false,
+    config = function()
+      require "custom/configs/dlvdapui"
+    end,
   },
 }
 
