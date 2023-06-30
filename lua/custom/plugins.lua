@@ -67,15 +67,6 @@ local plugins = {
     opts = require("custom.configs.gitsigns").gitsigns,
   },
   {
-    "ggandor/leap.nvim",
-    init = require("core.utils").lazy_load "leap.nvim",
-    config = function()
-      require("leap").add_default_mappings()
-      vim.keymap.del({ "x", "o" }, "x")
-      vim.keymap.del({ "x", "o" }, "X")
-    end,
-  },
-  {
     "anuvyklack/pretty-fold.nvim",
     init = require("core.utils").lazy_load "pretty-fold.nvim",
     config = function()
@@ -141,6 +132,25 @@ local plugins = {
   {
     "kevinhwang91/nvim-bqf",
     lazy = false,
+  },
+  -- {
+  --   "ggandor/leap.nvim",
+  --   init = require("core.utils").lazy_load "leap.nvim",
+  --   config = function()
+  --     require("leap").add_default_mappings()
+  --     vim.keymap.del({ "x", "o" }, "x")
+  --     vim.keymap.del({ "x", "o" }, "X")
+  --     vim.keymap.set("n", "s", function()
+  --       local current_window = vim.fn.win_getid()
+  --       require("leap").leap { target_windows = { current_window } }
+  --     end)
+  --   end,
+  -- },
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    opts = require("custom.configs.flash_opt").option,
+    keys = require("custom.configs.flash_opt").keys,
   },
 }
 
