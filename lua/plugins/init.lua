@@ -63,6 +63,7 @@ local default_plugins = {
 
   {
     "lukas-reineke/indent-blankline.nvim",
+    version = "2.20.7",
     init = function()
       require("core.utils").lazy_load "indent-blankline.nvim"
     end,
@@ -229,7 +230,6 @@ local default_plugins = {
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "nvimtree")
       require("nvim-tree").setup(opts)
-      vim.g.nvimtree_side = opts.view.side
     end,
   },
 
