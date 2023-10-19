@@ -20,7 +20,8 @@ local sources = {
   b.formatting.black.with { extra_args = { "--fast" } },
   b.formatting.isort,
   b.formatting.stylua,
-  b.formatting.gofumpt,
+  -- b.formatting.gofumpt,
+  b.formatting.gofumpt.with { extra_args = { "-w", "$FILENAME" } },
   b.formatting.goimports,
 
   -- diagnostics
@@ -57,11 +58,12 @@ null_ls.setup {
         callback = function()
           -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
           -- if vim.g.vim_version < 8 then
-          if vim.version().minor < 8 then
-            vim.lsp.buf.formatting_sync()
-          else
-            vim.lsp.buf.format { bufnr = bufnr }
-          end
+          -- if vim.version().minor < 8 then
+          --   vim.lsp.buf.formatting_sync()
+          -- else
+          --   vim.lsp.buf.format { bufnr = bufnr }
+          -- end
+          vim.lsp.buf.format { async = false }
         end,
       })
     end

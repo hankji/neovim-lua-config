@@ -147,10 +147,21 @@ local plugins = {
   --   end,
   -- },
   {
+    "sindrets/diffview.nvim",
+    event = "VeryLazy",
+  },
+  {
     "folke/flash.nvim",
     event = "VeryLazy",
     opts = require("custom.configs.flash_opt").option,
     keys = require("custom.configs.flash_opt").keys,
+  },
+  {
+    "echasnovski/mini.align",
+    version = "*",
+    config = function()
+      require("mini.align").setup()
+    end,
   },
 }
 
