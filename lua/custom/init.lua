@@ -6,7 +6,8 @@ opt.number = true
 opt.relativenumber = true
 opt.tabstop = 4
 opt.shiftwidth = 4
-vim.cmd("silent! command! NvCloseAllBuf lua require('nvchad_ui/tabufline').closeAllBufs('')")
+opt.scrolloff = 5
+vim.cmd "silent! command! NvCloseAllBuf lua require('nvchad_ui/tabufline').closeAllBufs('')"
 
 g.mapleader = ","
 -- need soft link from ~/config/nvim/snippets to snippets
