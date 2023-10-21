@@ -147,6 +147,10 @@ local plugins = {
   --   end,
   -- },
   {
+    "Bekaboo/dropbar.nvim",
+    -- optional, but required for fuzzy finder support
+  },
+  {
     "sindrets/diffview.nvim",
     event = "VeryLazy",
   },
