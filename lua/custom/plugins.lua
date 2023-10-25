@@ -115,13 +115,14 @@ local plugins = {
     enabled = true,
   },
 
-  {
-    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    init = require("core.utils").lazy_load "lsp_lines.nvim",
-    config = function()
-      require("lsp_lines").setup()
-    end,
-  },
+  -- 暂时关闭,https://todo.sr.ht/~whynothugo/lsp_lines.nvim/44
+  -- {
+  --   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  --   init = require("core.utils").lazy_load "lsp_lines.nvim",
+  --   config = function()
+  --     require("lsp_lines").setup()
+  --   end,
+  -- },
   {
     "shellRaining/hlchunk.nvim",
     event = { "UIEnter" },
