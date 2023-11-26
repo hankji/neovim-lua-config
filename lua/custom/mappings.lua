@@ -13,6 +13,11 @@ M.telescope = {
     ["<F2>"] = { "<cmd> Telescope lsp_document_symbols <CR>", "   list document symbols" },
   },
 }
+M.dapui = {
+  n = {
+    ["<leader>kk"] = { "<cmd> lua require('dapui').eval() <CR>", "show variable value in dapui" },
+  },
+}
 M.lspconfig = {
   n = {
     ["<leader>fm"] = {
