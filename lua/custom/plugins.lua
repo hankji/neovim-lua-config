@@ -168,6 +168,19 @@ local plugins = {
       require("mini.align").setup()
     end,
   },
+  {
+    "mfussenegger/nvim-dap",
+    config = function()
+      require "custom.configs.custom-dap"
+    end,
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    requires = { "mfussenegger/nvim-dap" },
+    config = function()
+      require "custom.configs.custom-dapui"
+    end,
+  },
 }
 
 return plugins

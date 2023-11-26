@@ -8,6 +8,7 @@ opt.tabstop = 4
 opt.shiftwidth = 4
 opt.scrolloff = 5
 vim.cmd "silent! command! NvCloseAllBuf lua require('nvchad_ui/tabufline').closeAllBufs('')"
+vim.cmd "silent! command! DapuiToggle lua require('dapui').toggle()"
 
 g.mapleader = ","
 -- need soft link from ~/config/nvim/snippets to snippets
