@@ -149,6 +149,10 @@ local plugins = {
   -- },
   {
     "Bekaboo/dropbar.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("dropbar").setup()
+    end,
     -- optional, but required for fuzzy finder support
   },
   {
