@@ -1,12 +1,9 @@
 local opt = vim.opt
 local g = vim.g
-local config = require("core.utils").load_config()
 
 -------------------------------------- globals -----------------------------------------
-g.nvchad_theme = config.ui.theme
 g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
 g.toggle_theme_icon = "   "
-g.transparency = config.ui.transparency
 
 -------------------------------------- options ------------------------------------------
 opt.laststatus = 3 -- global statusline
@@ -14,6 +11,7 @@ opt.showmode = false
 
 opt.clipboard = "unnamedplus"
 opt.cursorline = true
+opt.cursorlineopt = 'number'
 
 -- Indenting
 opt.expandtab = true
@@ -83,14 +81,11 @@ autocmd("BufWritePost", {
     local app_name = vim.env.NVIM_APPNAME and vim.env.NVIM_APPNAME or "nvim"
     local module = string.gsub(fp, "^.*/" .. app_name .. "/lua/", ""):gsub("/", ".")
 
+    require("plenary.reload").reload_module "nvconfig"
     require("plenary.reload").reload_module "base46"
     require("plenary.reload").reload_module(module)
-    require("plenary.reload").reload_module "custom.chadrc"
 
-    config = require("core.utils").load_config()
-
-    vim.g.nvchad_theme = config.ui.theme
-    vim.g.transparency = config.ui.transparency
+    local config = require "nvconfig"
 
     -- statusline
     if config.ui.statusline.theme ~= "custom" then

@@ -18,7 +18,7 @@ M.lazy = function(install_path)
   M.echo "  Compiling base46 theme to bytecode ..."
 
   local base46_repo = "https://github.com/NvChad/base46"
-  shell_call { "git", "clone", "--depth", "1", "-b", "v2.0", base46_repo, lazy_path }
+  shell_call { "git", "clone", "--depth", "1", "-b", "v3.0", base46_repo, lazy_path }
   vim.opt.rtp:prepend(lazy_path)
 
   require("base46").compile()
@@ -32,7 +32,7 @@ M.lazy = function(install_path)
   -- install plugins
   require "plugins"
 
-  -- mason packages & show post_boostrap screen
+  -- mason packages & show post_bootstrap screen
   require "nvchad.post_install"()
 end
 
