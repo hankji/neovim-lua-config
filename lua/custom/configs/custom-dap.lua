@@ -18,6 +18,18 @@ local get_args = function()
   end
   return params
 end
+
+local function filtered_pick_process()
+  local opts = {}
+  vim.ui.input(
+    { prompt = "Search by process name (lua pattern), or hit enter to select from the process list: " },
+    function(input)
+      opts["filter"] = input or ""
+    end
+  )
+  return require("dap.utils").pick_process(opts)
+end
+
 -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
 dap.configurations.go = {
   {
@@ -26,6 +38,20 @@ dap.configurations.go = {
     request = "launch",
     args = get_args,
     program = "${file}",
+  },
+  {
+    type = "delve",
+    name = "Debug pkg",
+    request = "launch",
+    args = get_args,
+    program = "${relativeFileDirname}",
+  },
+  {
+    type = "delve",
+    name = "Attach",
+    request = "attach",
+    mode = "local",
+    processId = filtered_pick_process,
   },
   {
     type = "delve",
