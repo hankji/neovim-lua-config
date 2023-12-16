@@ -44,6 +44,8 @@ M.mason = {
     -- go dev
     "gopls",
     "gofumpt",
+    -- "rust_analyzer", "pyright"
+    "pyright",
 
     -- shell dev
     "shfmt",

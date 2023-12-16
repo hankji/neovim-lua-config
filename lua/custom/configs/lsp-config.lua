@@ -4,14 +4,29 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "gopls", "rust_analyzer", "pyright" }
-
+local servers = { "pyright" }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities,
   }
 end
+
+lspconfig.gopls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    ["gpls"] = {
+      ["gofumpt"] = true,
+      ["usePlaceholders"] = true,
+      ["codelenses"] = {
+        ["generate"] = true,
+        ["gc_details"] = true,
+      },
+      semanticTokens = true,
+    },
+  },
+}
 
 --
 -- lspconfig.pyright.setup { blabla}
