@@ -4,15 +4,11 @@ M.treesitter = {
   ensure_installed = {
     "vim",
     "lua",
-    "html",
-    "css",
-    "javascript",
-    "c",
     "markdown",
-    "markdown_inline",
     "go",
+    "gomod",
     "python",
-    "rust",
+    "bash",
   },
   indent = {
     enable = true,
@@ -24,14 +20,21 @@ M.treesitter = {
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
+    disable = function(lang, buf)
+      local max_filesize = 1000 * 1024 -- 100 KB
+      local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+      if ok and stats and stats.size > max_filesize then
+        return true
+      end
+    end,
   },
   incremental_selection = {
     enable = true,
     keymaps = {
       init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
+      node_incremental = "gln",
+      scope_incremental = "glc",
+      node_decremental = "glm",
     },
   },
 }
