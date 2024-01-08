@@ -185,6 +185,14 @@ local plugins = {
       require "custom.configs.custom-dapui"
     end,
   },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    event = "VeryLazy",
+    config = function()
+      require("trouble").setup()
+    end,
+  },
 }
 
 return plugins
